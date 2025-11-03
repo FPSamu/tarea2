@@ -1,0 +1,19 @@
+<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh;">
+    <h1>Ingresa un nombre de usuario</h1>
+    <div style="display:flex; flex-direction:column; align-items:center; gap:1vh;">
+        <input id="username" type="text" style="height:30px;" placeholder="Tu nombre" required>
+        <button id="loginBtn" style="height:30px;">Iniciar Sesión</button>
+    </div>
+</div>
+
+<script>
+    document.getElementById('loginBtn').addEventListener('click', () => {
+        const username = document.getElementById('username').value.trim();
+        if (!username) {
+            alert('Por favor ingresa un nombre de usuario');
+            return;
+        }
+        sessionStorage.setItem('username', username);
+        window.location.href = '/chat';
+    });
+</script>
